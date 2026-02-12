@@ -1,0 +1,8 @@
+{
+  "name": "color-picker",
+  "version": "1.0.0",
+  "strapi": {
+    "name": "color-picker",
+    "displayName": "Color Picker"
+  }
+}

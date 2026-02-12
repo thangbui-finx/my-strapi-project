@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "promotion_types",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "category"
+    "singularName": "promotion-type",
+    "pluralName": "promotion-types",
+    "displayName": "promotion-type"
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +14,11 @@
     "name": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid"
-    },
     "promotions": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::promotion.promotion",
-      "inversedBy": "categories"
+      "inversedBy": "promotion_types"
     }
   }
 }
