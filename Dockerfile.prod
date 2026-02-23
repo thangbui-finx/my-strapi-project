@@ -10,7 +10,7 @@ RUN npm install
 WORKDIR /opt/app
 COPY . .
 
-RUN npx run strapi generate:types
+RUN npx strapi generate:types
 
 # build admin
 RUN npm run build
