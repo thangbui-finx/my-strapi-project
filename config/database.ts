@@ -2,7 +2,19 @@ import path from "path";
 import { parse } from "pg-connection-string";
 export default ({ env }) => {
   const client = env("DATABASE_CLIENT", "postgres");
-  const config = parse(env("DATABASE_URL"));
+  const databaseUrl = env("DATABASE_URL");
+  if (!databaseUrl) {
+    return {
+      connection: {
+        client: "sqlite",
+        connection: {
+          filename: path.join(__dirname, "..", "..", ".tmp/data.db"),
+        },
+        useNullAsDefault: true,
+      },
+    };
+  }
+  const config = parse(databaseUrl);
   const connections = {
     mysql: {
       connection: {

@@ -9,6 +9,18 @@ RUN npm install
 
 COPY . .
 
+#Fake ENV for build
+ENV NODE_ENV=production
+ENV DATABASE_CLIENT=sqlite
+ENV DATABASE_FILENAME=.tmp/data.db
+ENV HOST=0.0.0.0
+ENV PORT=1337
+ENV APP_KEYS=dummy
+ENV API_TOKEN_SALT=dummy
+ENV ADMIN_JWT_SECRET=dummy
+ENV JWT_SECRET=dummy
+
+
 # build admin panel
 RUN npm run build
 
