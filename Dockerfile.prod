@@ -9,9 +9,6 @@ RUN npm install
 
 COPY . .
 
-# generate types (optional)
-RUN npx strapi generate:types
-
 # build admin panel
 RUN npm run build
 
